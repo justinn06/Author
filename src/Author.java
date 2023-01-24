@@ -15,11 +15,11 @@ public class Author {
 
     public String getGender() {
         if (this.gender == 'f')
-            return "Female.";
+            return "female";
         else if (this.gender == 'm')
-            return "Male.";
+            return "male";
         else
-            return "Other.";
+            return "other";
     }
 
     public String getEmail() {
@@ -31,7 +31,8 @@ public class Author {
     }
 
     public String toString() {
-        return "Author[Name = " + this.name + ", Email = " + this.email + ", Gender = " + this.gender + "]";
+        return "Author[Name = " + getName() + ", Email = " + getEmail() + ", Gender = " + getGender() + "]";
+        //Better programming practice to insert methods rather than variables.
     }
 
 }

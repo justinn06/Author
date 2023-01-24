@@ -14,30 +14,38 @@ public class Book {
     public String getName() {
         return this.name;
     }
-
-    public String getAuthor() {
-        return this.author.toString();
+    public Author getAuthor() {
+        return this.author;
     }
-
     public String getPrice() {
         return this.price + "€";
     }
-
     public void setPrice(double p) {
         this.price = p;
     }
-
-    public String getSold() {
-        return this.sold + " sold.";
+    public int getSold() {
+        return this.sold;
     }
-
     public void setSold(int s) {
         this.sold = s;
     }
 
+    /* Introduce new methods called: getAuthorName(), getAuthorEmail(), getAuthorGender()
+    in the book class to return the name, email, and gender of the author of the book. */
+
+    public String getAuthorName() {
+        return getAuthor().getName();
+    }
+    public String getAuthorEmail() {
+        return getAuthor().getEmail();
+    }
+    public String getAuthorGender() {
+        return getAuthor().getGender();
+    }
+
     public String toString() {
-        return "Book[Name = " + this.name + ", " + this.author.toString() + ", Price = "
-                + this.price + "€, Sold = " + this.sold + "]";
+        return "Book[Name = " + getName() + ", " + getAuthor().toString() + ", Price = "
+                + getPrice() + ", Sold = " + getSold() + "]";
     }
 
 }

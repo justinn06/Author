@@ -20,5 +20,10 @@ public class Driver {
         Book book2 = new Book("Of Mice and Men", author2, 9.00, 150);
         System.out.println(book2.toString());
 
+        //System.out.println(book1.getAuthor().getName()); same as
+        System.out.println(book1.getAuthorName());
+        System.out.println(book2.getAuthorEmail());
+        System.out.println(book2.getAuthorGender());
+
     }
 }
