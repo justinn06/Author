@@ -5,12 +5,12 @@ public class Book {
     double price;
     int sold;
 
-    /*public Book(String n, Author a, double p, int s) {
+    public Book(String n, Author a, double p, int s) {
         this.name = n;
         this.author = a;
         this.price = p;
         this.sold = s;
-    }*/
+    }
     public Book(String n, Author[] a, double p, int s) {
         this.name = n;
         this.authors = a;
@@ -21,10 +21,15 @@ public class Book {
     public String getName() {
         return this.name;
     }
-    public Author getAuthor(int x) {
+
+    public Author getAuthor() {
+        return this.author;
+    }
+    public Author getAuthors(int x) {
         int i = x;
         return this.authors[i];
     }
+
     public String getPrice() {
         return this.price + "€";
     }
@@ -40,22 +45,31 @@ public class Book {
 
     /* Introduce new methods called: getAuthorName(), getAuthorEmail(), getAuthorGender()
     in the book class to return the name, email, and gender of the author of the book. */
-
-    public String getAuthorName(int x) {
-        int i = x;
-        return getAuthor(i).getName();
+    public String getAuthorName() {
+        return this.author.getName();
     }
+
+    public String getAuthorsName(int x) {
+        int i = x;
+        return getAuthors(i).getName();
+    }
+
     public String getAuthorEmail(int x) {
         int i = x;
-        return getAuthor(i).getEmail();
+        return getAuthors(i).getEmail();
     }
+
     public String getAuthorGender(int x) {
         int i = x;
-        return getAuthor(i).getGender();
+        return getAuthors(i).getGender();
     }
 
     public String toString() {
-        return "Book[Name = " + getName() + ", " + getAuthor(0).toString() + ", Price = "
+        return "Book[Name = " + getName() + ", " + getAuthor().toString() + ", Price = "
+                + getPrice() + ", Sold = " + getSold() + "]";
+    }
+    public String toStrings() {
+        return "Book[Name = " + getName() + ", " + getAuthors(0).toString() + ", Price = "
                 + getPrice() + ", Sold = " + getSold() + "]";
     }
 
