@@ -3,15 +3,19 @@ import java.sql.SQLOutput;
 public class Driver {
     public static void main(String[] args) {
 
-        Author author1 = new Author("JK Rowling", "123@gmail.com", 'f');
-        //System.out.println(author1.getName());
-        //System.out.println(author1.getEmail());
-        author1.setEmail("rowling@gmail.com");
+        Author[] author1 = new Author[1];
+        author1[0] = new Author("JK Rowling", "123@gmail.com", 'f');
+        //author1.setEmail("rowling@gmail.com");
         System.out.println(author1.toString());
 
-
-        Author author2 = new Author("Steinbeck", "steinbeck@gmail.com", 'm');
+        Author[] author2 = new Author[1];
+        author2[0] = new Author("Steinbeck", "steinbeck@gmail.com", 'm');
         System.out.println(author2.toString());
+
+        Author[] author3 = new Author[3];
+        author3[0] = new Author("Roal Dahl", "dahl@gmail.com", 'm');
+        author3[1] = new Author("Michelle Obama", "michelleobama@gmail.com", 'f');
+        //author3[2] = new Author("Carol Ann Duffy", "annduffy@gmail.com", 'f');
 
         Book book1 = new Book("Harry Potter", author1, 10.50, 0);
         book1.setSold(100);
@@ -20,10 +24,12 @@ public class Driver {
         Book book2 = new Book("Of Mice and Men", author2, 9.00, 150);
         System.out.println(book2.toString());
 
-        //System.out.println(book1.getAuthor().getName()); same as
-        System.out.println(book1.getAuthorName());
-        System.out.println(book2.getAuthorEmail());
-        System.out.println(book2.getAuthorGender());
+        Book book3 = new Book("Book3", author3, 11.50, 200);
+
+        System.out.println(book3.getAuthor(0));
+        System.out.println(book3.getAuthorName(0));
+        System.out.println(book3.getAuthorEmail(1));
+        System.out.println(book3.getAuthorGender(1));
 
     }
 }

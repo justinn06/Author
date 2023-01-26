@@ -3,7 +3,7 @@ public class Author {
     private String email;
     private char gender;
 
-    public Author(String n, String e, char g) {
+    public Author (String n, String e, char g) {
         this.name = n;
         this.email = e;
         this.gender = g;
